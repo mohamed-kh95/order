@@ -58,12 +58,13 @@ const OptList = (props) => {
                             </form>
                         </Modal.Body>
                         <Modal.Footer>
-                        <Button variant="primary" onClick = {(e) => {props.editSave(e); handleClose(e)}}>
-                            Save Changes
-                        </Button>
-                        <Button variant="secondary" onClick={handleClose}>
+                        <Button variant="outline-secondary" onClick={handleClose}>
                             Close
                         </Button>
+                        <Button variant="success" onClick = {(e) => {props.editSave(e); handleClose(e)}}>
+                            Save
+                        </Button>
+                        
                         
                         </Modal.Footer>
                     </Modal>
