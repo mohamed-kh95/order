@@ -12,7 +12,8 @@
 }
 .add-opt form {
     padding: 10px;
-    height: 300px
+    height: 300px;
+    overflow-y: auto
 }
 .add-opt form input[disabled] {
     background-color: #FFF;
