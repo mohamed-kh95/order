@@ -28,8 +28,7 @@ const OptList = (props) => {
                                             className = 'form-control'
                                             type = 'text'
                                             defaultValue = {props.options[props.index].name}/>
-                                        <button className = 'btn btn-primary'>Edit</button>
-                                        <button name='name' onClick = {(e) => props.deleteOpt(e, props.index)} className = 'btn btn-danger'>Remove</button>
+                                        
                                     </div>
                                 </div>
                                 <div className = 'input-content'>
@@ -41,8 +40,7 @@ const OptList = (props) => {
                                             className = 'form-control'
                                             type = 'text'
                                             defaultValue = {props.options[props.index].transToEn}/>
-                                        <button className = 'btn btn-primary'>Edit</button>
-                                        <button className = 'btn btn-danger'>Remove</button>
+                                        
                                     </div>
                                 </div>
                                 <div className = 'input-content'>
@@ -54,8 +52,7 @@ const OptList = (props) => {
                                             className = 'form-control'
                                             type = 'text'
                                             defaultValue = {props.options[props.index].transToF}/>
-                                        <button className = 'btn btn-primary'>Edit</button>
-                                        <button className = 'btn btn-danger'>Remove</button>
+                                        
                                     </div>
                                 </div>
                             </form>
