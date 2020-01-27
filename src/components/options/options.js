@@ -71,7 +71,7 @@ class Options extends Component {
       <div className="Options">
           <Container>
               <Row>
-                  <Col xs = {6}>
+                  <Col xs = {12} md = {6}>
                     <div className = 'add-opt'>
                         <div className = 'opt d-flex justify-content-between align-items-center'>
                             <div className = 'title'>
