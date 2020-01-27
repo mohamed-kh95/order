@@ -11,12 +11,8 @@ class Options extends Component {
             // {name: 'Test', transToEn: 'Test', transToF: 'Test'}
         ],
         newOpt: {name:'', transToEn: '', transToF: ''}
-        // hasEdit: false,
-        // setShow: false,
-        // show: false
+        
     }
-    // handleClose = () => this.setState({setShow: false});
-    // handleShow = () => this.setState({setShow: true});
     handleChange = (e) => {
         let {newOpt} = this.state;
         newOpt[e.target.name] = e.target.value;
@@ -48,10 +44,9 @@ class Options extends Component {
         });
         console.log(this.state.options)
     }
-    deleteOpt = (e, index) => {
-        e.preventDefault();
+    deleteOpt = (index) => {
         let {options} = this.state;
-        options[index][e.target.name] = '';
+        options.splice(index, 1)
         this.setState({
             options
         });

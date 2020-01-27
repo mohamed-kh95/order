@@ -11,6 +11,7 @@ const OptList = (props) => {
             <div className = 'form-group d-flex align-items-center'>
                 <input className = 'form-control' type = 'text' disabled value = {props.opt.name} />
                 <button onClick = {(e) => {e.preventDefault(); handleShow()}} className = 'btn btn-primary'>Edit</button>
+                <button onClick = {(e) => {e.preventDefault(); props.deleteOpt(props.index)}} className = 'btn btn-danger'>Delete</button>
                 <>
                     <Modal show={show} onHide={handleClose}>
                         <Modal.Header closeButton>
