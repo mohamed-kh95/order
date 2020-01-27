@@ -1,0 +1,30 @@
+.add-opt {
+    border: 1px solid #999;
+}
+.add-opt p {
+    margin: 0;
+    color: #999;
+    user-select: none
+}
+.opt {
+    padding: 10px;
+    border-bottom: 1px solid #999
+}
+.add-opt form {
+    padding: 10px;
+    height: 300px
+}
+.add-opt form input[disabled] {
+    background-color: #FFF;
+    box-shadow: none;
+    outline: none;
+}
+.noitem {
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999
+}
