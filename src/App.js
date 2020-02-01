@@ -81,12 +81,20 @@ class App extends Component {
   groupSubmit = (e) => {
       e.preventDefault();
       let {groups, newGroup} = this.state;
-      groups.push(newGroup);
-      newGroup = {name:'', transToEn: '', transToF: '', open: false, id: Math.random()}
-      this.setState({
-          groups,
-          newGroup
-      });
+      if(newGroup.name !== '') {
+        groups.push(newGroup);
+        newGroup = {name:'', transToEn: '', transToF: '', open: false, id: Math.random()}
+        this.setState({
+            groups,
+            newGroup
+        });
+      } else {
+        newGroup = {name:'', transToEn: '', transToF: '', open: false, id: Math.random()}
+        this.setState({
+            groups,
+            newGroup
+        });
+      }
   }
   // Popup Edit
   editGroupList = (e, index) => {
