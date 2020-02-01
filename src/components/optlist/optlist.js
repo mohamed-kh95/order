@@ -9,7 +9,7 @@ const OptList = (props) => {
         <>
         
             <div className = 'form-group d-flex align-items-center'>
-                <input className = 'form-control' type = 'text' disabled value = {props.opt.name} />
+                <input draggable className = 'form-control' type = 'text' disabled value = {props.opt.name} />
                 <button onClick = {(e) => {e.preventDefault(); handleShow()}} className = 'btn btn-primary'>Edit</button>
                 <button onClick = {(e) => {e.preventDefault(); props.deleteOpt(props.index)}} className = 'btn btn-danger'>Delete</button>
                 <>
@@ -18,13 +18,13 @@ const OptList = (props) => {
                         <Modal.Title>Add New Option</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                            <form onSubmit = {(e) => {props.handleSubmit(e); handleClose(e)}}>
+                            <form onSubmit = {(e) => {props.editOptSave(e); handleClose(e)}}>
                                 <div className = 'input-content'>
                                     <label>Option Name</label>
                                     <div className = 'form-group d-flex align-items-center'>
                                         <input
                                             name='name'
-                                            onChange = {(e) => props.editList(e, props.index)}
+                                            onChange = {(e) => props.editOptList(e, props.index)}
                                             className = 'form-control'
                                             type = 'text'
                                             defaultValue = {props.options[props.index].name}/>
@@ -36,7 +36,7 @@ const OptList = (props) => {
                                     <div className = 'form-group d-flex align-items-center'>
                                         <input 
                                             name = 'transToEn'
-                                            onChange = {(e) => props.editList(e, props.index)}
+                                            onChange = {(e) => props.editOptList(e, props.index)}
                                             className = 'form-control'
                                             type = 'text'
                                             defaultValue = {props.options[props.index].transToEn}/>
@@ -48,7 +48,7 @@ const OptList = (props) => {
                                     <div className = 'form-group d-flex align-items-center'>
                                         <input
                                             name = 'transToF'
-                                            onChange = {(e) => props.editList(e, props.index)}
+                                            onChange = {(e) => props.editOptList(e, props.index)}
                                             className = 'form-control'
                                             type = 'text'
                                             defaultValue = {props.options[props.index].transToF}/>
@@ -61,7 +61,7 @@ const OptList = (props) => {
                         <Button variant="outline-secondary" onClick={handleClose}>
                             Close
                         </Button>
-                        <Button variant="success" onClick = {(e) => {props.editSave(e); handleClose(e)}}>
+                        <Button variant="success" onClick = {(e) => {props.editOptSave(e); handleClose(e)}}>
                             Save
                         </Button>
                         

@@ -6,86 +6,44 @@ import './options.css';
 
 
 class Options extends Component {
-    state = {
-        options : [
-            // {name: 'Test', transToEn: 'Test', transToF: 'Test'}
-        ],
-        newOpt: {name:'', transToEn: '', transToF: ''}
-        
-    }
-    handleChange = (e) => {
-        let {newOpt} = this.state;
-        newOpt[e.target.name] = e.target.value;
-        
-        this.setState({
-            newOpt
-        })
-        
-    }
-    handleSubmit = (e) => {
-        e.preventDefault();
-        let {options, newOpt} = this.state;
-        options.push(newOpt);
-        newOpt = {name:'', transToEn: '', transToF: ''}
-        this.setState({
-            options,
-            newOpt
-        });
-    }
-    editList = (e, index) => {
-        let {options} = this.state;
-        options[index][e.target.name] = e.target.value
-    }
-    editSave = (e) => {
-        e.preventDefault();
-        let {options} = this.state;
-        this.setState({
-            options
-        });
-        console.log(this.state.options)
-    }
-    deleteOpt = (index) => {
-        let {options} = this.state;
-        options.splice(index, 1)
-        this.setState({
-            options
-        });
-        console.log(this.state.options)
-    }
+    
+    
+    // componentDidMount = () => {
+    //     const {options} = this.state;
+    //     const optLength = options.length;
+    //     this.props.checkLength(optLength);
+    //     console.log('Length =>' + this.props.checkLength(optLength))
+    // }
+    // componentDidUpdate = () => {
+    //     console.log('update Options')
+    // }
   render() {
-      const {options} = this.state;
+      const {options} = this.props;
       const optLength = options.length;
-      const optList = optLength ? ( options.map((opt, index) => {
+      const optList = optLength ? (options.map((opt, index) => {
           return (
             <div key = {index}>
-                <OptList deleteOpt = {this.deleteOpt} editSave = {this.editSave} editList = {this.editList} opt = {opt} options = {this.state.options} handleSubmit = {this.handleSubmit} handleChange = {this.handleChange}  editToggle = {this.editToggle} index = {index} />
+                <OptList deleteOpt = {this.props.deleteOpt} editOptSave = {this.props.editOptSave} editOptList = {this.props.editOptList} opt = {opt} options = {this.props.options} optionSubmit = {this.props.optionSubmit} optionChange = {this.props.optionChange} index = {index} />
             </div>
           )
       })) : (<div className = 'noitem'>No Options Added</div>)
     return (
-      <div className="Options">
-          <Container>
-              <Row>
-                  <Col xs = {12} md = {6}>
-                    <div className = 'add-opt'>
-                        <div className = 'opt d-flex justify-content-between align-items-center'>
-                            <div className = 'title'>
-                                <div>Options</div>
-                                <p>Add Options Items</p>
-                            </div>
-                            <AddOpt handleSubmit = {this.handleSubmit} handleChange = {this.handleChange} newOpt = {this.state.newOpt} />
+        <Col xs = {12} md = {6} style = {{userSelect: 'none'}}>
+            <div className="Options">
+                <div className = 'add-opt'>
+                    <div className = 'opt d-flex justify-content-between align-items-center'>
+                        <div className = 'title'>
+                            <div>Options</div>
+                            <p>Add Options Items</p>
                         </div>
-                        <form>
-                            {optList}
-                        </form>
+                        <AddOpt optionSubmit = {this.props.optionSubmit} optionChange = {this.props.optionChange} newOpt = {this.props.newOpt} />
                     </div>
-                  </Col>
-                  
-
-              </Row>
-          </Container>
-        
-      </div>
+                    <form>
+                        {optList}
+                    </form>
+                </div>
+            </div>
+        </Col>
     );
   }
 }

@@ -1,41 +1,45 @@
 import React , {useState} from 'react';
 import {Modal, Button} from 'react-bootstrap';
-const AddOpt = (props) => {
+const AddGroup = (props) => {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-    const {optionSubmit, optionChange} = props;
+    const {groupSubmit, groupChange} = props;
     
     return (
         <>
-        <Button variant="danger" onClick={handleShow}>
+        <Button variant="danger"
+         onClick={handleShow}
+         disabled = {props.optionsLength ? false: true}
+         style = {{cursor: props.optionsLength ? 'pointer': 'no-drop'}}
+         >
             +
         </Button>
     
         <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
-            <Modal.Title>Add New Option</Modal.Title>
+            <Modal.Title>Add New Group</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <form onSubmit = {(e) => {optionSubmit(e); handleClose(e)}}>
+                <form onSubmit = {(e) => {groupSubmit(e); handleClose(e)}}>
                     <div className = 'input-content'>
-                        <label>Option Name</label>
+                        <label>Group Name</label>
                         <div className = 'form-group d-flex align-items-center'>
-                            <input name='name' id='name' onChange = {optionChange} className = 'form-control' type = 'text'/>
+                            <input name='name' onChange = {groupChange} className = 'form-control' type = 'text'/>
                             
                         </div>
                     </div>
                     <div className = 'input-content'>
                         <label>Translate To English</label>
                         <div className = 'form-group d-flex align-items-center'>
-                            <input name = 'transToEn' onChange = {optionChange} className = 'form-control' type = 'text' />
+                            <input name = 'transToEn' onChange = {groupChange} className = 'form-control' type = 'text' />
                             
                         </div>
                     </div>
                     <div className = 'input-content'>
                         <label>Translate To French</label>
                         <div className = 'form-group d-flex align-items-center'>
-                            <input name = 'transToF' onChange = {optionChange} className = 'form-control' type = 'text' />
+                            <input name = 'transToF' onChange = {groupChange} className = 'form-control' type = 'text' />
                             
                         </div>
                     </div>
@@ -46,7 +50,7 @@ const AddOpt = (props) => {
             <Button variant="outline-secondary" onClick={handleClose}>
                 Close
             </Button>
-            <Button variant="success" onClick = {(e) => {optionSubmit(e); handleClose(e)}}>
+            <Button variant="success" onClick = {(e) => {groupSubmit(e); handleClose(e)}}>
                 Save
             </Button>
             
@@ -56,4 +60,4 @@ const AddOpt = (props) => {
         </>
     );
 }
-export default AddOpt;
+export default AddGroup;

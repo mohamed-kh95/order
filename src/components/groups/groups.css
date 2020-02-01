@@ -1,0 +1,65 @@
+.add-group {
+    border: 1px solid #999;
+}
+.add-group p {
+    margin: 0;
+    color: #999;
+    user-select: none
+}
+.group {
+    padding: 10px;
+    border-bottom: 1px solid #999
+}
+.add-group form {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto
+}
+.group-dropdown {
+    border: 1px solid #999;
+    width: 100%;
+    height: auto;
+    
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    border-radius: .25rem;
+    display: block;
+}
+.group-name {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: .375rem .75rem;
+}
+.group-name .name {
+    margin-left: 10px;
+    
+}
+.group-name .group-toggle {
+    background-color: #999;
+    color: #FFF;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-group form input[disabled] {
+    background-color: #FFF;
+    box-shadow: none;
+    outline: none;
+}
+.noitem {
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #999
+}
+.show {
+    display: block!important;
+}

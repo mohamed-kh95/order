@@ -1,0 +1,23 @@
+.option-form {
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+ul.group-drop {
+    
+}
+.closed {
+    max-height: 0;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    margin: 0!important;
+    overflow: hidden;
+}
+.open {
+    max-height: 50px;
+    opacity: 1;
+    transition: all .5s ease-in-out;
+    margin-bottom: 1rem!important;
+    overflow: hidden;
+}
